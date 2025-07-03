@@ -1,0 +1,6 @@
+@caso_practico_backend_HostAddress = http://localhost:5290
+
+GET {{caso_practico_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
