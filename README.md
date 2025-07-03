@@ -1,1 +1,1 @@
-# caso_practico
+Buenas noches, como se mostró en la tarde, el backend está desarrollado en su totalidad, y el frontend tiene la mayoría de los requerimientos pedidos, quedaron faltando unos detalles a la hora de editar y eliminar los datos, esos detalles quedaron faltando porque no me alcanzó el tiempo.
