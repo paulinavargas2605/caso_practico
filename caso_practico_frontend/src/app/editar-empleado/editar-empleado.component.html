@@ -1,0 +1,54 @@
+<h1 class="center">Editar empleado</h1>
+
+<form (ngSubmit)="editarEmpleado()" #formEmpleado="ngForm" class="formulario">
+    <label>
+    Nombre:
+    <input type="text" name="nombre" [(ngModel)]="empleado.nombre" required 
+        #nombreModel="ngModel" [class.invalid]="correoModel.invalid && (nombreModel.dirty || nombreModel.touched)"/>
+    </label>
+
+    <div *ngIf="nombreModel.invalid && (nombreModel.dirty || nombreModel.touched)" class="error">
+    <div *ngIf="nombreModel.errors?.['required']">El nombre es obligatorio.</div>
+    </div>
+
+    <label>
+        Correo:
+        <input type="email" name="correo" [(ngModel)]="empleado.correo" required 
+            #correoModel="ngModel" [class.invalid]="correoModel.invalid && (correoModel.dirty || correoModel.touched)"/>
+    </label>
+
+    <div *ngIf="mostrarError" class="mensaje-error">
+        <span>{{ mensajeErrorCorreo }}</span>
+        <button (click)="cerrarMensaje()">X</button>
+    </div>
+
+    <div *ngIf="correoModel.invalid && (correoModel.dirty || correoModel.touched)" class="error">
+    <div *ngIf="correoModel.errors?.['required']">El correo es obligatorio.</div>
+    <div *ngIf="correoModel.errors?.['email']">Formato de correo inválido.</div>
+    </div>
+
+    <label>
+        Cargo:
+        <input type="text" name="cargo" [(ngModel)]="empleado.cargo" />
+    </label>
+
+    <label>
+        Departamento:
+        <input type="text" name="departamento" [(ngModel)]="empleado.departamento" />
+    </label>
+
+    <label>
+        Teléfono:
+        <input type="text" name="telefono" [(ngModel)]="empleado.telefono" />
+    </label>
+
+    <div class="botones">
+        <button type="submit" [disabled]="formEmpleado.invalid">
+        <i class="bi bi-check-circle"></i> Guardar
+        </button>
+
+        <button type="button" (click)="cancelar()">
+        <i class="bi bi-x-circle"></i> Cancelar
+        </button>
+    </div>
+</form> 

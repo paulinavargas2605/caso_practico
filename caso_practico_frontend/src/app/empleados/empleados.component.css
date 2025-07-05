@@ -1,0 +1,281 @@
+@media (max-width: 768px){
+    
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.filtroNombreDepartamento{
+    text-align: right;
+}
+
+button {
+    padding: 6px 12px;
+    margin-right: 5px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 400px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    margin-top: 15px;
+    width: 100%;
+    background-color: #27ae60;
+}
+
+form button:hover {
+    background-color: #1e8449;
+}
+
+form button a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.botonEliminar{
+    background-color: red;
+}
+
+.botonEliminar:hover {
+    background-color: #ca1616;
+}
+
+.mensaje-exito {
+    background-color: #e6ffed;
+    color: #276749;
+    padding: 15px 20px;
+    border: 1px solid #c6f6d5;
+    border-left: 5px solid #38a169;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+}
+
+.mensaje-exito span {
+    display: block;
+    font-size: 15px;
+}
+
+.mensaje-exito button {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #276749;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s ease-in-out;
+}
+
+.mensaje-exito button:hover {
+    color: #1a4731;   
+}
+
+.mensaje-error {
+    background-color: #ffe6e6;
+    color: #a94442;
+    padding: 15px 20px;
+    border: 1px solid #f5c6cb;
+    border-left: 5px solid #d9534f;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+}
+
+.mensaje-error span {
+    display: block;
+    font-size: 15px;
+}
+
+.mensaje-error button {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #a94442;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s ease-in-out;
+}
+
+.mensaje-error button:hover {
+    color: #7c2d2d;
+}
+
+.filtros-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    font-family: Arial, sans-serif;
+}
+
+.filtros-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.filtros-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.filtros-container select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+    outline: none;
+}
+
+.boton-crear {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    padding: 12px;
+}
+
+.boton-crear:hover {
+    background-color: #3498db;
+    transform: translateY(-1px);
+}
+
+.boton-crear i {
+    font-size: 18px;
+}
+
+.encabezado-empleados {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.encabezado-empleados h1 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.contenedor-boton-filtro {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.boton-filtro {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 6px; 
+    vertical-align: middle; 
+}
+
+.boton-filtro:hover {
+    background-color: #2980b9;
+}

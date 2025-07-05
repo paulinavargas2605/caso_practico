@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+</head>
+<body>
+
+<div class="encabezado-empleados">
+  <h1>Listado de Empleados</h1>
+  <button class="boton-crear" routerLink="/crear-empleado">
+    <i class="bi bi-plus-circle"></i> Crear empleado
+  </button>
+</div>
+
+<div class="filtros-container">
+  <label for="tipoFiltro">Filtrar por:</label>
+  <select id="tipoFiltro" (change)="tipoDeFiltro($event)">
+    <option value="">Seleccione el tipo de filtro</option>
+    <option value="nombre">Nombre</option>
+    <option value="departamento">Departamento</option>
+  </select>
+
+  <div *ngIf="valorSeleccionado">
+    <label for="valorFiltro">Seleccione el {{ valorSeleccionado }}:</label>
+    <select id="valorFiltro" [(ngModel)]="valorFiltroSeleccionado" name="valorFiltro">
+      <option value="">Seleccione el {{ valorSeleccionado }}</option>
+      <option *ngFor="let filtro of filtros" [value]="filtro">{{ filtro }}</option>
+    </select>
+  </div>
+
+  <div class="contenedor-boton-filtro">
+    <button class="boton-filtro" (click)="filtrarDatos()">
+      <i class="bi bi-search"></i> Filtrar
+    </button>
+  </div>
+</div>
+
+<div *ngIf="mostrarMensajeExito" class="mensaje-exito">
+  <span>{{ mensaje }}</span>
+  <button (click)="cerrarMensaje()">X</button>
+</div>
+
+<div *ngIf="mostrarMensajeError" class="mensaje-error">
+  <span>{{ mensaje }}</span>
+  <button (click)="cerrarMensaje()">X</button>
+</div>
+
+<div *ngIf="cargando">
+  <p>Cargando empleados...</p>
+</div>
+
+<div *ngIf="!cargando">
+  <div *ngIf="empleados.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Cargo</th>
+          <th>Departamento</th>
+          <th>Teléfono</th>
+          <th>Fecha de ingreso</th>
+          <th>Activo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empleado of empleadosPaginados">
+          <td data-label>{{empleado.id}}</td>
+          <td data-label>{{empleado.nombre}}</td>
+          <td data-label>{{empleado.correo}}</td>
+          <td data-label>{{empleado.cargo}}</td>
+          <td data-label>{{empleado.departamento}}</td>
+          <td data-label>{{empleado.telefono}}</td>
+          <td data-label>{{empleado.fechaIngreso | date:'yyyy-MM-dd'}}</td>
+          <td data-label>{{empleado.activo ? 'Sí' : 'No'}}</td>
+          <td data-label>
+            <button title="Editar" [routerLink]="['/editar-empleado', empleado.id]">
+              <i class="bi bi-pencil-square"></i>
+            </button>
+            <button (click)="eliminarEmpleado(empleado.id!)" title="Eliminar" class="botonEliminar">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- PAGINACIÓN -->
+    <div class="paginacion">
+      <button *ngFor="let pagina of totalPaginas"
+              (click)="cambiarPagina(pagina)"
+              [class.activa]="pagina === paginaActual">
+        {{ pagina }}
+      </button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+

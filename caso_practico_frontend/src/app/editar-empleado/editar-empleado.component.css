@@ -1,0 +1,109 @@
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+h1, h2 {
+  color: #2c3e50;
+}
+
+.formulario {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff; /* blanco igual que la tabla */
+  border-radius: 6px; /* igual que form y botones */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* sombra similar */
+  font-family: Arial, sans-serif; /* misma fuente */
+  color: #333; /* mismo color de texto */
+}
+
+.formulario label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #2c3e50; /* mismo azul oscuro que títulos */
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario input[type="tel"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.activo-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.botones {
+  display: flex;
+  justify-content: flex-end; /* para que queden a la derecha */
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.botones button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: white;
+  background-color: #3498db; /* azul base igual que botones */
+  transition: background-color 0.3s ease;
+}
+
+.botones button:hover {
+  background-color: #2980b9; /* azul oscuro hover */
+}
+
+.botones button.cancelar {
+  background-color: #e74c3c; /* rojo para cancelar */
+}
+
+.botones button.cancelar:hover {
+  background-color: #c0392b; /* rojo oscuro hover */
+}
+
+input.invalid {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+
+.error {
+  color: red;
+}
+
+.mensaje-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.mensaje-error button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  cursor: pointer;
+}
