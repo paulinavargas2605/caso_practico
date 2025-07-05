@@ -133,3 +133,4 @@ C:\caso_practico\caso_practico_backend\obj\Debug\net8.0\caso_practico_backend.pd
 C:\caso_practico\caso_practico_backend\obj\Debug\net8.0\caso_practico_backend.genruntimeconfig.cache
 C:\caso_practico\caso_practico_backend\obj\Debug\net8.0\ref\caso_practico_backend.dll
 C:\caso_practico\caso_practico_backend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\caso_practico\caso_practico_backend\obj\Debug\net8.0\caso_practico_backend.sourcelink.json

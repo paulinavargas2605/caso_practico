@@ -3,7 +3,7 @@ using System;
 
 namespace caso_practico_backend.Clases
 {
-    public class Empleados
+    public class Empleados : IValidatableObject
     {
         public int Id { get; set; }
 
@@ -19,6 +19,16 @@ namespace caso_practico_backend.Clases
 
         [DataType(DataType.Date)]
         public DateTime FechaIngreso { get; set; }
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (FechaIngreso > DateTime.Now)
+            {
+                yield return new ValidationResult(
+                    "La fecha de ingreso no puede ser mayor a la fecha actual.",
+                    new[] { nameof(FechaIngreso) }
+                );
+            }
+        }
         public bool Activo { get; set; }
     }
 }
